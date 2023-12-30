@@ -1,0 +1,157 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-essential",
+    "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended",
+    "plugin:import/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "vue"],
+  "rules": {
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "no-plusplus": "error",
+    "no-implicit-coercion": "error",
+    "no-unneeded-ternary": "error",
+    "curly": "error",
+    "no-console": [
+      "error",
+      {
+        "allow": ["info", "error"]
+      }
+    ],
+    "no-empty": [
+      "error",
+      {
+        "allowEmptyCatch": true
+      }
+    ],
+    "eqeqeq": "error",
+    "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        "prefer": "type-imports",
+        "fixStyle": "separate-type-imports"
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": "error",
+    "import/no-unresolved": "off",
+    "import/newline-after-import": [
+      "error",
+      {
+        "count": 1
+      }
+    ],
+    "import/no-cycle": "error",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc"
+        },
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "sibling",
+          "parent",
+          "index",
+          "type"
+        ],
+        "pathGroupsExcludedImportTypes": ["type"],
+        "pathGroups": [
+          {
+            "pattern": "vue**",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@vueuse/**",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "lucide-vue-next",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@shadcn/**",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@pages/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@widgets/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@features/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@entities/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@ui/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@lib/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@assets/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@constants/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@typings/**",
+            "group": "type",
+            "position": "before"
+          }
+        ]
+      }
+    ],
+    "vue/multi-word-component-names": [
+      "error",
+      {
+        "ignores": ["Layout", "Home"]
+      }
+    ]
+  }
+}

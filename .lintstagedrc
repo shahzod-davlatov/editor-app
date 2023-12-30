@@ -1,0 +1,4 @@
+{
+  "*.{ts,vue}": ["npm run format"],
+  "*.{json,css}": ["npm run format"]
+}
