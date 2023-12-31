@@ -7,15 +7,15 @@ import { POSTS_LOADED_KEY } from '@constants/storage'
 import { useFetchPosts } from '../api'
 import { useDocumentStorage } from '../lib'
 
-import type { DocumentCardProps } from '@typings/document'
+import type { DocumentCardData } from '@typings/document'
 import type { Ref } from 'vue'
 
 export const useDocumentList = (
   filter: Ref<string>
 ): {
-  documents: Ref<DocumentCardProps[]>
+  documents: Ref<DocumentCardData[]>
   isFetching: Ref<boolean>
-  handleAddDocument: (document: DocumentCardProps) => void
+  handleAddDocument: (document: DocumentCardData) => void
   handleRemoveDocument: (id: string) => void
   handleClear: () => void
 } => {
@@ -25,7 +25,7 @@ export const useDocumentList = (
 
   const documents = useDocumentStorage()
 
-  const handleAddDocument = (document: DocumentCardProps): void => {
+  const handleAddDocument = (document: DocumentCardData): void => {
     documents.value = [...documents.value, document]
   }
 

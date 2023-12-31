@@ -5,6 +5,7 @@ import { Button } from '@shadcn/ui/button'
 import {
   Card,
   CardContent,
+  CardDescription,
   CardHeader,
   CardTitle,
   CardFooter,
@@ -12,6 +13,7 @@ import {
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogFooter,
@@ -19,7 +21,11 @@ import {
   DialogClose,
 } from '@shadcn/ui/dialog'
 
-import type { DocumentCardProps } from '@typings/document'
+import dayjs from 'dayjs'
+
+import { DATE_FORMAT } from '@constants/locale'
+
+import type { DocumentCardData } from '@typings/document'
 import type { MessageSchema } from '@typings/locale'
 
 type Emits = {
@@ -27,17 +33,20 @@ type Emits = {
   remove: [id: string]
 }
 
-const { id, title, description } = defineProps<DocumentCardProps>()
+const { id, title, description, date } = defineProps<DocumentCardData>()
 
 const emit = defineEmits<Emits>()
 
-const { t } = useI18n<{ message: MessageSchema }>()
+const { t, locale } = useI18n<{ message: MessageSchema }>()
 </script>
 
 <template>
-  <Card class="h-48 w-full md:w-1/4">
+  <Card class="max-h-56 w-full md:w-1/4">
     <CardHeader>
       <CardTitle class="truncate">{{ title }}</CardTitle>
+      <CardDescription>
+        {{ dayjs(date).locale(locale).format(DATE_FORMAT) }}
+      </CardDescription>
     </CardHeader>
     <CardContent class="truncate">
       {{ description }}
@@ -50,6 +59,9 @@ const { t } = useI18n<{ message: MessageSchema }>()
         <DialogContent class="w-11/12 md:w-max">
           <DialogHeader>
             <DialogTitle>{{ title }}</DialogTitle>
+            <DialogDescription>
+              {{ dayjs(date).locale(locale).format(DATE_FORMAT) }}
+            </DialogDescription>
           </DialogHeader>
 
           {{ description }}

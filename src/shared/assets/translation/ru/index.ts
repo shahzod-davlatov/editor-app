@@ -13,6 +13,7 @@ const message: MessageSchema = {
     remove: 'Удалить',
     clear: 'Очистить',
     add: 'Добавить',
+    save: 'Сохранить',
   },
   input: {
     search: {
@@ -20,8 +21,17 @@ const message: MessageSchema = {
       placeholder: 'Поиск',
     },
   },
-  test: 'тест',
-  hello: 'привет',
+  'add-dialog': {
+    header: 'Создать документ',
+    title: {
+      label: 'Наименование',
+      placeholder: 'Введите название',
+    },
+    description: {
+      label: 'Описание',
+      placeholder: 'Введите описание',
+    },
+  },
 }
 
 export default message

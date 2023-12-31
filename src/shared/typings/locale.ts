@@ -11,6 +11,7 @@ export type MessageSchema = {
     remove: string
     clear: string
     add: string
+    save: string
   }
   input: {
     search: {
@@ -18,6 +19,15 @@ export type MessageSchema = {
       placeholder: string
     }
   }
-  test: string
-  hello: string
+  'add-dialog': {
+    header: string
+    title: {
+      label: string
+      placeholder: string
+    }
+    description: {
+      label: string
+      placeholder: string
+    }
+  }
 }

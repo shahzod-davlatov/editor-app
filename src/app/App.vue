@@ -4,10 +4,6 @@ import Layout from '@pages/Layout.vue'
 
 <template>
   <Layout>
-    <RouterView v-slot="{ Component }">
-      <Transition name="fade">
-        <component :is="Component" />
-      </Transition>
-    </RouterView>
+    <RouterView />
   </Layout>
 </template>

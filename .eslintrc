@@ -150,7 +150,7 @@
     "vue/multi-word-component-names": [
       "error",
       {
-        "ignores": ["Layout", "Home"]
+        "ignores": ["Layout", "Home", "Editor"]
       }
     ]
   }

@@ -15,7 +15,7 @@ const { t } = useI18n<{ message: MessageSchema }>()
 <template>
   <div class="flex min-h-dvh flex-col">
     <div class="p-5"><NavigationMenu /></div>
-    <div class="grow">
+    <div class="grow px-5">
       <slot />
     </div>
     <div class="flex justify-end p-5">

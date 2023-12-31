@@ -2,17 +2,17 @@ import { customRef } from 'vue'
 
 import { DOCUMENT_PREFIX } from '@constants/storage'
 
-import type { DocumentCardProps } from '@typings/document'
+import type { DocumentCardData } from '@typings/document'
 import type { Ref } from 'vue'
 
-export const useDocumentStorage = (): Ref<DocumentCardProps[]> => {
-  let documents: DocumentCardProps[]
+export const useDocumentStorage = (): Ref<DocumentCardData[]> => {
+  let documents: DocumentCardData[]
 
   return customRef((track, trigger) => ({
-    get(): DocumentCardProps[] {
+    get(): DocumentCardData[] {
       track()
 
-      documents = Object.keys(localStorage).reduce<DocumentCardProps[]>(
+      documents = Object.keys(localStorage).reduce<DocumentCardData[]>(
         (acc, key) => {
           const document = localStorage.getItem(key)
 
