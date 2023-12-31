@@ -1,9 +1,15 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
 import { Github } from 'lucide-vue-next'
 
 import { Button } from '@shadcn/ui/button'
 
 import { NavigationMenu } from '@widgets/navigation-menu'
+
+import type { MessageSchema } from '@typings/locale'
+
+const { t } = useI18n<{ message: MessageSchema }>()
 </script>
 
 <template>
@@ -12,13 +18,17 @@ import { NavigationMenu } from '@widgets/navigation-menu'
     <div class="grow">
       <slot />
     </div>
-    <div class="flex items-center justify-end gap-3 p-5">
-      <span class="text-primary">Shahzod Davlatov</span>
-      <Button size="icon" variant="link" as-child>
-        <a href="https://github.com/shahzod418" target="_blank">
+    <div class="flex justify-end p-5">
+      <a
+        href="https://github.com/shahzod418"
+        target="_blank"
+        class="flex items-center gap-3 text-primary"
+      >
+        <span>{{ t('footer.author') }}</span>
+        <Button size="icon" variant="link">
           <Github />
-        </a>
-      </Button>
+        </Button>
+      </a>
     </div>
   </div>
 </template>

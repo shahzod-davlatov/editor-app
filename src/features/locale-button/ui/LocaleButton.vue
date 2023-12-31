@@ -8,6 +8,7 @@ import { Languages } from 'lucide-vue-next'
 import { Button } from '@shadcn/ui/button'
 
 import { DEFAULT_LOCALE, ADDITIONAL_LOCALE } from '@constants/locale'
+import { LANGUAGE_KEY } from '@constants/storage'
 
 import type { SUPPORT_LOCALES } from '@constants/locale'
 
@@ -15,7 +16,7 @@ const { locale } = useI18n<{
   locale: (typeof SUPPORT_LOCALES)[number]
 }>()
 
-const language = useLocalStorage('language', locale.value)
+const language = useLocalStorage(LANGUAGE_KEY, locale.value)
 
 const toggleLanguage = (): void => {
   const newLanguage =
