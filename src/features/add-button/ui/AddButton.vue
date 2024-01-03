@@ -24,10 +24,10 @@ import { nanoid } from 'nanoid'
 import { useForm } from 'vee-validate'
 import * as z from 'zod'
 
-import type { DocumentCardData } from '@typings/document'
+import type { DocumentData } from '@typings/document'
 import type { MessageSchema } from '@typings/locale'
 
-const emit = defineEmits<{ save: [data: DocumentCardData] }>()
+const emit = defineEmits<{ save: [data: DocumentData] }>()
 
 const { t } = useI18n<{ message: MessageSchema }>()
 

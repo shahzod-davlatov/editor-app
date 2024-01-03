@@ -90,6 +90,16 @@
             "position": "before"
           },
           {
+            "pattern": "@liveblocks/**",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@tiptap/**",
+            "group": "external",
+            "position": "before"
+          },
+          {
             "pattern": "lucide-vue-next",
             "group": "external",
             "position": "before"
@@ -150,7 +160,7 @@
     "vue/multi-word-component-names": [
       "error",
       {
-        "ignores": ["Layout", "Home", "Editor"]
+        "ignores": ["Layout", "Home", "Document"]
       }
     ]
   }

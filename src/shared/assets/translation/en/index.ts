@@ -14,6 +14,8 @@ const message: MessageSchema = {
     clear: 'Clear',
     add: 'Add',
     save: 'Save',
+    download: 'Download',
+    invite: 'Invite',
   },
   input: {
     search: {
@@ -31,6 +33,12 @@ const message: MessageSchema = {
       label: 'Description',
       placeholder: 'Enter description',
     },
+  },
+  toast: {
+    invite: 'The link is copied to the clipboard',
+  },
+  editor: {
+    placeholder: 'Write something...',
   },
 }
 

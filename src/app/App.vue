@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Toaster } from '@shadcn/ui/toast'
+
 import Layout from '@pages/Layout.vue'
 </script>
 
@@ -6,4 +8,5 @@ import Layout from '@pages/Layout.vue'
   <Layout>
     <RouterView />
   </Layout>
+  <Toaster />
 </template>

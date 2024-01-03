@@ -1,4 +1,5 @@
 const animate = require('tailwindcss-animate')
+const plugin = require('tailwindcss/plugin')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -79,5 +80,17 @@ module.exports = {
       },
     },
   },
-  plugins: [animate],
+  plugins: [
+    animate,
+    plugin(({ addBase, theme }) => {
+      addBase({
+        h1: { fontSize: theme('fontSize.5xl') },
+        h2: { fontSize: theme('fontSize.4xl') },
+        h3: { fontSize: theme('fontSize.3xl') },
+        h4: { fontSize: theme('fontSize.2xl') },
+        h5: { fontSize: theme('fontSize.xl') },
+        h6: { fontSize: theme('fontSize.lg') },
+      })
+    }),
+  ],
 }

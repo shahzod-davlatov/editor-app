@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid'
 
 import { POSTS_URL } from '@constants/api'
 
-import type { DocumentCardData } from '@typings/document'
+import type { DocumentData } from '@typings/document'
 import type { AfterFetchContext } from '@vueuse/core'
 import type { Ref } from 'vue'
 
@@ -18,7 +18,7 @@ type Post = {
 
 export const useFetchPosts = (
   loaded: Ref<boolean>
-): { data: Ref<DocumentCardData[] | null>; isFetching: Ref<boolean> } => {
+): { data: Ref<DocumentData[] | null>; isFetching: Ref<boolean> } => {
   const { data, isFetching } = useFetch(POSTS_URL, {
     immediate: !loaded.value,
     afterFetch(ctx: AfterFetchContext<Partial<Post>[]>) {
@@ -35,7 +35,7 @@ export const useFetchPosts = (
 
       return ctx
     },
-  }).json<DocumentCardData[]>()
+  }).json<DocumentData[]>()
 
   return { data, isFetching }
 }

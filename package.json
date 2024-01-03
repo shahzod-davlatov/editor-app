@@ -14,6 +14,21 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@liveblocks/client": "^1.9.1",
+    "@liveblocks/yjs": "^1.9.1",
+    "@tiptap/extension-collaboration": "^2.1.13",
+    "@tiptap/extension-collaboration-cursor": "^2.1.13",
+    "@tiptap/extension-color": "^2.1.13",
+    "@tiptap/extension-font-family": "^2.1.13",
+    "@tiptap/extension-highlight": "^2.1.13",
+    "@tiptap/extension-link": "^2.1.13",
+    "@tiptap/extension-text-align": "^2.1.13",
+    "@tiptap/extension-text-style": "^2.1.13",
+    "@tiptap/extension-typography": "^2.1.13",
+    "@tiptap/extension-underline": "^2.1.13",
+    "@tiptap/pm": "^2.1.13",
+    "@tiptap/starter-kit": "^2.1.13",
+    "@tiptap/vue-3": "^2.1.13",
     "@vee-validate/zod": "^4.12.4",
     "@vueuse/core": "^10.7.1",
     "autoprefixer": "^10.4.16",
@@ -33,6 +48,10 @@
     "vue": "^3.3.11",
     "vue-i18n": "^9.8.0",
     "vue-router": "4",
+    "y-indexeddb": "^9.0.12",
+    "y-prosemirror": "^1.2.2",
+    "y-protocols": "^1.0.6",
+    "yjs": "^13.6.10",
     "zod": "^3.22.4"
   },
   "devDependencies": {

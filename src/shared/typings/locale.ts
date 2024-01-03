@@ -12,6 +12,8 @@ export type MessageSchema = {
     clear: string
     add: string
     save: string
+    download: string
+    invite: string
   }
   input: {
     search: {
@@ -29,5 +31,11 @@ export type MessageSchema = {
       label: string
       placeholder: string
     }
+  }
+  toast: {
+    invite: string
+  }
+  editor: {
+    placeholder: string
   }
 }

@@ -1,6 +1,6 @@
 import type { Dayjs } from 'dayjs'
 
-export type DocumentCardData = {
+export type DocumentData = {
   id: string
   title: string
   description: string

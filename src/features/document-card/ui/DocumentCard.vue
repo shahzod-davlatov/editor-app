@@ -25,7 +25,7 @@ import dayjs from 'dayjs'
 
 import { DATE_FORMAT } from '@constants/locale'
 
-import type { DocumentCardData } from '@typings/document'
+import type { DocumentData } from '@typings/document'
 import type { MessageSchema } from '@typings/locale'
 
 type Emits = {
@@ -33,7 +33,8 @@ type Emits = {
   remove: [id: string]
 }
 
-const { id, title, description, date } = defineProps<DocumentCardData>()
+const { id, title, description, date } =
+  defineProps<Omit<DocumentData, 'content'>>()
 
 const emit = defineEmits<Emits>()
 

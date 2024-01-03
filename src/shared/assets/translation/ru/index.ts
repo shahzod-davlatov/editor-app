@@ -14,6 +14,8 @@ const message: MessageSchema = {
     clear: 'Очистить',
     add: 'Добавить',
     save: 'Сохранить',
+    download: 'Скачать',
+    invite: 'Пригласить',
   },
   input: {
     search: {
@@ -31,6 +33,12 @@ const message: MessageSchema = {
       label: 'Описание',
       placeholder: 'Введите описание',
     },
+  },
+  toast: {
+    invite: 'Ссылка скопирована в буффер обмена',
+  },
+  editor: {
+    placeholder: 'Напишите что-нибудь...',
   },
 }
 
