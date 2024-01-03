@@ -8,6 +8,7 @@ import TextColorCommand from './TextColorCommand.vue'
 import TextHighlight from './TextHighlight.vue'
 import TextSizeCommand from './TextSizeCommand.vue'
 import TextStyleCommand from './TextStyleCommand.vue'
+import UserCommand from './UserCommand.vue'
 
 import type { Editor } from '@tiptap/vue-3'
 
@@ -25,5 +26,6 @@ const { editor } = defineProps<{ editor: Editor }>()
     <TextAlignCommand :editor="editor" />
     <ListCommand :editor="editor" />
     <OtherCommand :editor="editor" />
+    <UserCommand :editor="editor" />
   </div>
 </template>

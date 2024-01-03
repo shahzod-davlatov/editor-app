@@ -10,6 +10,8 @@ import { Typography } from '@tiptap/extension-typography'
 import { Underline } from '@tiptap/extension-underline'
 import { StarterKit } from '@tiptap/starter-kit'
 
+import { defaultColor, defaultName } from '@constants/editor'
+
 import type { BaseUserMeta, JsonObject, LsonObject } from '@liveblocks/client'
 import type LiveblocksProvider from '@liveblocks/yjs'
 import type { Doc } from 'yjs'
@@ -30,12 +32,16 @@ export const getEditorExtensions = (
   | typeof Collaboration
   | typeof CollaborationCursor
 > => [
-  Link,
   Color,
   Underline,
   Typography,
   FontFamily,
   TextStyle,
+  Link.configure({
+    HTMLAttributes: {
+      class: 'underline text-primary cursor-pointer',
+    },
+  }),
   Highlight.configure({
     multicolor: true,
   }),
@@ -70,5 +76,11 @@ export const getEditorExtensions = (
   Collaboration.configure({
     document: yDoc,
   }),
-  CollaborationCursor.configure({ provider: yProvider }),
+  CollaborationCursor.configure({
+    provider: yProvider,
+    user: {
+      name: defaultName,
+      color: defaultColor,
+    },
+  }),
 ]

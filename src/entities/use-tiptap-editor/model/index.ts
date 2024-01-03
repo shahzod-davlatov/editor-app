@@ -17,7 +17,9 @@ import type { ShallowRef } from 'vue'
 
 export const useTiptapEditor = (
   documentId: string
-): { editor: ShallowRef<Editor | undefined> } => {
+): {
+  editor: ShallowRef<Editor | undefined>
+} => {
   const client = createClient({
     publicApiKey: LIVEBLOCKS_API_KEY,
   })

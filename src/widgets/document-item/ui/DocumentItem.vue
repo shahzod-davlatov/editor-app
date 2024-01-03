@@ -52,9 +52,11 @@ const handleInvite = (): void => {
 }
 
 watch(copied, () => {
-  toast({
-    title: t('toast.invite'),
-  })
+  if (copied.value) {
+    toast({
+      title: t('toast.invite'),
+    })
+  }
 })
 </script>
 
