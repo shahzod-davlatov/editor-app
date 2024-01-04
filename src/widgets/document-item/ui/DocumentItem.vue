@@ -61,7 +61,7 @@ watch(copied, () => {
 </script>
 
 <template>
-  <div class="flex grow flex-col gap-5 md:flex-row">
+  <div class="flex grow flex-col gap-5 2xl:flex-row">
     <DocumentInfo
       v-model:title="documentData.title"
       v-model:description="documentData.description"

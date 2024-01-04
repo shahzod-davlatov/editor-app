@@ -74,7 +74,7 @@ const menuItems = computed(() => [
 
 <template>
   <DropdownMenu>
-    <DropdownMenuTrigger as-child class="md:hidden">
+    <DropdownMenuTrigger as-child class="2xl:hidden">
       <Button size="icon" variant="secondary">
         <Menu />
       </Button>

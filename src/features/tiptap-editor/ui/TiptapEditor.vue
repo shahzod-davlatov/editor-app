@@ -12,7 +12,7 @@ const { editor } = useTiptapEditor(documentId)
 <template>
   <div
     v-if="editor"
-    class="relative w-full grow rounded-lg border bg-card p-5 pt-20 text-card-foreground shadow-sm md:w-9/12 md:grow-0"
+    class="relative w-full grow rounded-lg border bg-card p-5 pt-20 text-card-foreground shadow-sm 2xl:w-9/12 2xl:grow-0"
   >
     <EditorCommand :editor="editor" />
     <EditorContent :editor="editor" />

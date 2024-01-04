@@ -12,7 +12,7 @@ const textAligns = useTextAlign(editor)
 </script>
 
 <template>
-  <div class="hidden h-12 items-center gap-2 md:flex">
+  <div class="hidden h-12 items-center gap-2 2xl:flex">
     <template v-for="(textAlign, index) in textAligns" :key="textAlign.key">
       <Button
         size="icon"

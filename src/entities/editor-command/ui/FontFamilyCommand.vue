@@ -22,7 +22,7 @@ const fontFamilies = useFontFamily(editor)
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
-      <Button size="icon" variant="secondary" class="hidden md:flex">
+      <Button size="icon" variant="secondary" class="hidden 2xl:flex">
         <Type />
       </Button>
     </DropdownMenuTrigger>

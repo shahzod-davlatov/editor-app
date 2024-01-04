@@ -14,7 +14,7 @@ const otherButtons = useOtherButton(editor)
   <template v-for="otherButton in otherButtons" :key="otherButton.key">
     <Button
       size="icon"
-      class="hidden md:flex"
+      class="hidden 2xl:flex"
       :variant="otherButton.variant"
       @click="otherButton.onClick"
     >

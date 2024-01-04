@@ -12,7 +12,7 @@ const listButtons = useListButton(editor)
 </script>
 
 <template>
-  <div class="hidden h-12 items-center gap-2 md:flex">
+  <div class="hidden h-12 items-center gap-2 2xl:flex">
     <template v-for="(listButton, index) in listButtons" :key="listButton.key">
       <Button
         size="icon"

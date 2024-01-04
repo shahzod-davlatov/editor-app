@@ -12,7 +12,7 @@ const textStyles = useTextStyle(editor)
 </script>
 
 <template>
-  <div class="hidden h-12 items-center gap-2 md:flex">
+  <div class="hidden h-12 items-center gap-2 2xl:flex">
     <template v-for="(textStyle, index) in textStyles" :key="textStyle.key">
       <Button
         size="icon"

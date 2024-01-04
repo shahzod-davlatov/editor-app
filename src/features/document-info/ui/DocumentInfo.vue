@@ -58,7 +58,10 @@ watch(liveDescription, () => {
 </script>
 
 <template>
-  <Collapsible v-model:open="isOpen" class="flex flex-col gap-5 md:grow">
+  <Collapsible
+    v-model:open="isOpen"
+    class="flex max-w-xl flex-col gap-5 2xl:grow"
+  >
     <div class="flex items-center justify-between gap-5">
       <Input
         type="text"
