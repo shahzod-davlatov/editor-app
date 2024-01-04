@@ -38,6 +38,8 @@ watch(editor, () => {
   overflow-y: scroll;
 
   outline: none;
+
+  padding-top: 16px;
 }
 
 .collaboration-cursor__caret {

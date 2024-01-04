@@ -24,6 +24,7 @@ const textSizes = useTextSize(editor)
     <DropdownMenuTrigger as-child>
       <Button
         size="icon"
+        class="hidden md:flex"
         :variant="editor.isActive('heading') ? 'default' : 'secondary'"
       >
         <Heading />

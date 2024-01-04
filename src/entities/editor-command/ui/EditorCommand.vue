@@ -2,6 +2,7 @@
 import FontFamilyCommand from './FontFamilyCommand.vue'
 import LinkCommand from './LinkCommand.vue'
 import ListCommand from './ListCommand.vue'
+import MobileCommand from './MobileCommand.vue'
 import OtherCommand from './OtherCommand.vue'
 import TextAlignCommand from './TextAlignCommand.vue'
 import TextColorCommand from './TextColorCommand.vue'
@@ -16,7 +17,10 @@ const { editor } = defineProps<{ editor: Editor }>()
 </script>
 
 <template>
-  <div class="absolute inset-x-0 top-0 flex items-center gap-5 p-5">
+  <div
+    class="absolute inset-x-0 top-0 flex items-center gap-3 p-3 md:gap-5 md:p-5"
+  >
+    <MobileCommand :editor="editor" />
     <TextStyleCommand :editor="editor" />
     <TextSizeCommand :editor="editor" />
     <FontFamilyCommand :editor="editor" />

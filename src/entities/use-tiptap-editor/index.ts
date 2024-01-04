@@ -1,3 +1,1 @@
-import { useTiptapEditor } from './model'
-
-export { useTiptapEditor }
+export { useTiptapEditor } from './model'

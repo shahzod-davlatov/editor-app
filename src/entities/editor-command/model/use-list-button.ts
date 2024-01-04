@@ -1,31 +1,34 @@
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 import { List, ListOrdered } from 'lucide-vue-next'
 
-import type { Button } from '@shadcn/ui/button'
 import type { Editor } from '@tiptap/vue-3'
-import type { Icon } from 'lucide-vue-next'
+import type { CommandItem } from '@typings/editor'
+import type { MessageSchema } from '@typings/locale'
 import type { ComputedRef } from 'vue'
 
-type ListButton = {
-  key: string
-  variant: InstanceType<typeof Button>['$props']['variant']
-  onClick: () => boolean
-  icon: Icon
-}
+export const useListButton = (editor: Editor): ComputedRef<CommandItem[]> => {
+  const { t } = useI18n<{ message: MessageSchema }>()
 
-export const useListButton = (editor: Editor): ComputedRef<ListButton[]> =>
-  computed(() => [
+  return computed(() => [
     {
       key: 'bulletList',
+      class: editor.isActive('bulletList') ? 'text-primary' : undefined,
+      text: t('editor.command.bulletList'),
       variant: editor.isActive('bulletList') ? 'default' : 'secondary',
-      onClick: () => editor.chain().focus().toggleBulletList().run(),
+      disabled: !editor.can().chain().focus().toggleBulletList().run(),
       icon: List,
+      onClick: () => editor.chain().focus().toggleBulletList().run(),
     },
     {
       key: 'orderedList',
+      class: editor.isActive('orderedList') ? 'text-primary' : undefined,
+      text: t('editor.command.orderedList'),
       variant: editor.isActive('orderedList') ? 'default' : 'secondary',
-      onClick: () => editor.chain().focus().toggleOrderedList().run(),
+      disabled: !editor.can().chain().focus().toggleOrderedList().run(),
       icon: ListOrdered,
+      onClick: () => editor.chain().focus().toggleOrderedList().run(),
     },
   ])
+}

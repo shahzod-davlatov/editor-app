@@ -1,14 +1,19 @@
 <script setup lang="ts">
-import { watch } from 'vue'
+import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-import { Download, Users } from 'lucide-vue-next'
+import { Users, ChevronsUpDown } from 'lucide-vue-next'
 
 import { Button } from '@shadcn/ui/button'
+import {
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent,
+} from '@shadcn/ui/collapsible'
 import { Input } from '@shadcn/ui/input'
 import { Textarea } from '@shadcn/ui/textarea'
 
-import { useLiveInfo } from '../lib'
+import { useLiveInfo } from '@entities/live-info'
 
 import type { MessageSchema } from '@typings/locale'
 
@@ -32,6 +37,8 @@ const emit = defineEmits<{
   invite: []
 }>()
 
+const isOpen = ref(false)
+
 const { t } = useI18n<{ message: MessageSchema }>()
 
 const {
@@ -51,24 +58,32 @@ watch(liveDescription, () => {
 </script>
 
 <template>
-  <div class="flex h-min flex-col gap-5 md:grow">
-    <Input
-      type="text"
-      :model-value="liveTitle"
-      @update:model-value="handleLiveTitleInput"
-    />
-    <Textarea
-      :model-value="liveDescription"
-      @update:model-value="handleLiveDescriptionInput"
-      :rows="rows"
-    />
-    <div class="flex justify-end gap-5">
-      <Button v-if="canInvite" variant="ghost" @click="emit('invite')">
-        <Users class="mr-2 h-4 w-4" /> {{ t('button.invite') }}
-      </Button>
-      <Button>
-        <Download class="mr-2 h-4 w-4" /> {{ t('button.download') }}
-      </Button>
+  <Collapsible v-model:open="isOpen" class="flex flex-col gap-5 md:grow">
+    <div class="flex items-center justify-between gap-5">
+      <Input
+        type="text"
+        :model-value="liveTitle"
+        @update:model-value="handleLiveTitleInput"
+      />
+      <CollapsibleTrigger as-child>
+        <Button size="icon">
+          <ChevronsUpDown />
+        </Button>
+      </CollapsibleTrigger>
     </div>
-  </div>
+    <CollapsibleContent>
+      <div class="flex flex-col gap-5 md:grow">
+        <Textarea
+          :model-value="liveDescription"
+          @update:model-value="handleLiveDescriptionInput"
+          :rows="rows"
+        />
+        <div class="flex justify-end gap-5">
+          <Button v-if="canInvite" variant="ghost" @click="emit('invite')">
+            <Users class="mr-2 h-4 w-4" /> {{ t('button.invite') }}
+          </Button>
+        </div>
+      </div>
+    </CollapsibleContent>
+  </Collapsible>
 </template>
