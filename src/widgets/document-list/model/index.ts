@@ -31,9 +31,19 @@ export const useDocumentList = (
 
   const handleRemoveDocument = (id: string): void => {
     documents.value = documents.value.filter((document) => document.id !== id)
+    indexedDB.deleteDatabase(id)
   }
 
-  const handleClear = (): void => {
+  const handleClear = async (): Promise<void> => {
+    const databases = await indexedDB.databases()
+
+    databases.forEach(({ name }) => {
+      if (!name) {
+        return
+      }
+
+      indexedDB.deleteDatabase(name)
+    })
     documents.value = []
   }
 

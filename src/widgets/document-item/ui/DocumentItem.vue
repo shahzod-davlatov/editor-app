@@ -69,9 +69,6 @@ watch(copied, () => {
       :can-invite="isSupported"
       @invite="handleInvite"
     />
-    <TiptapEditor
-      :document-id="documentId"
-      @get-editor-instance="console.log($event)"
-    />
+    <TiptapEditor :document-id="documentId" />
   </div>
 </template>
