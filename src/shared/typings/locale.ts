@@ -14,6 +14,7 @@ export type MessageSchema = {
     save: string
     download: string
     invite: string
+    more: string
   }
   input: {
     search: {

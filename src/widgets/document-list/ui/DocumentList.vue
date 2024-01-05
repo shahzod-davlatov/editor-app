@@ -31,7 +31,7 @@ const {
     <AddButton @save="handleAddDocument" />
   </div>
   <div v-if="isFetching" class="mt-5 flex flex-wrap justify-center gap-5">
-    <Skeleton v-for="number in 10" :key="number" class="h-56 w-full md:w-1/4" />
+    <Skeleton v-for="number in 10" :key="number" class="h-40 w-full md:w-1/4" />
   </div>
   <div v-else class="mt-5 flex flex-wrap justify-center gap-5">
     <DocumentCard

@@ -4,7 +4,6 @@ import { useI18n } from 'vue-i18n'
 import { Button } from '@shadcn/ui/button'
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
@@ -42,20 +41,17 @@ const { t, locale } = useI18n<{ message: MessageSchema }>()
 </script>
 
 <template>
-  <Card class="max-h-56 w-full md:w-1/4">
+  <Card class="max-h-44 w-full md:w-1/5" @dblclick="emit('edit', id)">
     <CardHeader>
       <CardTitle class="truncate">{{ title }}</CardTitle>
       <CardDescription>
         {{ dayjs(date).locale(locale).format(DATE_FORMAT) }}
       </CardDescription>
     </CardHeader>
-    <CardContent class="truncate">
-      {{ description }}
-    </CardContent>
     <CardFooter class="flex justify-end">
       <Dialog>
         <DialogTrigger as-child>
-          <Button>{{ t('button.open') }}</Button>
+          <Button>{{ t('button.more') }}</Button>
         </DialogTrigger>
         <DialogContent class="w-11/12 md:w-max">
           <DialogHeader>

@@ -16,6 +16,7 @@ const message: MessageSchema = {
     save: 'Сохранить',
     download: 'Скачать',
     invite: 'Пригласить',
+    more: 'Подробнее',
   },
   input: {
     search: {

@@ -12,7 +12,7 @@ import dayjs from 'dayjs'
 import { DocumentInfo } from '@features/document-info'
 import { TiptapEditor } from '@features/tiptap-editor'
 
-import { DOCUMENT_PREFIX } from '@constants/storage'
+import { DOCUMENT_PREFIX, POSTS_LOADED_KEY } from '@constants/storage'
 
 import type { DocumentData } from '@typings/document'
 import type { MessageSchema } from '@typings/locale'
@@ -46,6 +46,8 @@ const { t } = useI18n<{ message: MessageSchema }>()
 const { copy, copied, isSupported } = useClipboard()
 
 const { toast } = useToast()
+
+useLocalStorage(POSTS_LOADED_KEY, true)
 
 const handleInvite = (): void => {
   copy(window.location.href)
